@@ -1,0 +1,1 @@
+# postgresql-96-s2i
