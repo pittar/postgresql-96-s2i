@@ -21,18 +21,18 @@ GRANT EXECUTE
 ON ALL FUNCTIONS IN SCHEMA public TO :dbuser;
 
 ALTER DEFAULT PRIVILEGES 
-    FOR USER postgres  -- Alternatively "FOR USER"
+    FOR USER :dbadmin  -- Alternatively "FOR USER"
     IN SCHEMA public
     GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO :dbuser;
 
 -- and the sequences, for INSERT to work
 ALTER DEFAULT PRIVILEGES
-    FOR USER postgres
+    FOR USER :dbadmin
     IN SCHEMA public
     GRANT USAGE ON SEQUENCES TO :dbuser;
     
 -- and the functions
 ALTER DEFAULT PRIVILEGES
-    FOR USER postgres
+    FOR USER :dbadmin
     IN SCHEMA public
     GRANT EXECUTE ON FUNCTIONS TO :dbuser;
