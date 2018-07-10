@@ -1,6 +1,6 @@
-DROP DATABASE :dbuser;
+--DROP DATABASE :dbuser;
 
-CREATE DATABASE :dbname;
+--CREATE DATABASE :dbname;
 
 \c :dbname;
 
