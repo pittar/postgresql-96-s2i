@@ -1,6 +1,6 @@
 --DROP DATABASE :dbuser;
 
---CREATE DATABASE :dbname;
+CREATE USER :dbuser WITH PASSWORD 'password';
 
 \c :dbname;
 
