@@ -1,9 +1,13 @@
-raise notice 'dbuser: %', :dbuser;
-raise notice 'dbpassword: %', :dbpassword;
-raise notice 'dbname: %', :dbname;
-raise notice 'dbadmin: %', :dbadmin;
+DO language plpgsql $$
+BEGIN
+    raise notice 'dbuser: %', :dbuser;
+    raise notice 'dbpassword: %', :dbpassword;
+    raise notice 'dbname: %', :dbname;
+    raise notice 'dbadmin: %', :dbadmin;
+END
+$$;
 
-CREATE USER :dbuser WITH PASSWORD :dbpassword;
+CREATE USER :dbuser WITH PASSWORD ':dbpassword';
 
 \c :dbname;
 
